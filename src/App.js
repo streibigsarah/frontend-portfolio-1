@@ -1,9 +1,9 @@
 import { Routes, Route, Navigate } from "react-router-dom";
-import Nav from "./nav";
-import ProjectPage from "./components./ProjectPage";
-import CreatePage from "./components./CreatePage";
-import HomePage from "./components./HomePage";
-import UpdatePage from "./components./UpdatePage";
+import Nav from "./components/Nav";
+import ProjectPage from "./components/ProjectPage";
+import CreatePage from "./components/CreatePage";
+import HomePage from "./components/HomePage";
+import UpdatePage from "./components/UpdatePage";
 import "./App.css";
 
 function App() {

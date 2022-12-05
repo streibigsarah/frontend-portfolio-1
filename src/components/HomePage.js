@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import Project from "../components/Project";
 
 export default function HomePage() {
-  const [projects, setProjects] = useState([]); // state to handle the data (users)
+  const [projects, setProjects] = useState([]); // state to handle the data (projectss)
   // users: name of the state
   // setProjects: name of the function to set the state
 
@@ -21,29 +21,50 @@ export default function HomePage() {
 
   return (
     <section className="page">
-      <h1>Torben Streibig Nielsen</h1>
-      <h2>Summery</h2>
-      <p>
-        Very experienced PL/SQL developer and designer with focus on
-        implementation, analysis, ETL and performance optimization and tuning.
-        Strong background in Financial Services and Telecom. I have strong
-        analytical skills and focus on business integration. Routine in working
-        with agile methods like Scrum, Kanban and LEAN. Technologies:
-      </p>
-      <ul>
-        <li>Oracle 10g, 11g, 12c,</li>
-        <li>PL/SQL</li>
-        <li>SQL</li>
-        <li>Quest Toad</li>
-        <li>Shell Script</li>
-      </ul>
-      <h3>Projects</h3>
+      <div id="simple">
+        <h1>Torben Streibig Nielsen</h1>
+        <img
+          src="https://static.wixstatic.com/media/8233f0_6f10c4899e4e4a8590b6e3a42bb37cf4~mv2.jpg"
+          alt="portrait torben"
+        />
+      </div>
+      <div>
+        <h2>Summery</h2>
+        <p>
+          Very experienced PL/SQL developer and designer with focus on
+          implementation, analysis, ETL and performance optimization and tuning.
+          Strong background in Financial Services and Telecom. I have strong
+          analytical skills and focus on business integration. Routine in
+          working with agile methods like Scrum, Kanban and LEAN. Technologies:
+        </p>
+        <ul>
+          <li>Oracle 10g, 11g, 12c,</li>
+          <li>PL/SQL</li>
+          <li>SQL</li>
+          <li>Quest Toad</li>
+          <li>Shell Script</li>
+        </ul>
+      </div>
 
-      <section className="grid-container">
-        {projects.map((projectObj) => (
-          <Project project={projectObj} key={projectObj.id} />
-        ))}
-      </section>
+      <div>
+        <h3>Projects</h3>
+        <label for="domestic" className="checkmark-container">
+          Domestic
+          <input id="show-country" type="checkbox" checked></input>
+          <span class="checkmark"></span>
+        </label>
+        <label for="foreign" className="checkmark-container">
+          Foreign
+          <input id="show-country" type="checkbox" checked></input>
+          <span class="checkmark"></span>
+        </label>
+
+        <section className="grid-container">
+          {projects.map((projectObj) => (
+            <Project project={projectObj} key={projectObj.id} />
+          ))}
+        </section>
+      </div>
     </section>
   );
 }

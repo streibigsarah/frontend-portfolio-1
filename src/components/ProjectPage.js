@@ -30,8 +30,10 @@ export default function ProjectPage() {
       <article className="project-detail">
         <section>
           <h1>{project.customer}</h1>
+          <p>{project.location}</p>
           <p>{project.period}</p>
           <p>{project.description}</p>
+          <p>{project.responsibilities}</p>
           <p>{project.technologies}</p>
           <p>{project.roles}</p>
           <button className="btn-outline" onClick={deleteProject}>

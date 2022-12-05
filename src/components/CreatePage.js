@@ -6,8 +6,10 @@ export default function CreatePage() {
   const [customer, setCustomer] = useState("");
   const [period, setPeriod] = useState("");
   const [description, setDescription] = useState("");
+  const [responsibilities, setResponsibilities] = useState("");
   const [technologies, setTechnologies] = useState("");
   const [roles, setRoles] = useState("");
+  const [location, setLocation] = useState("");
 
   async function createProject(event) {
     event.preventDefault();
@@ -17,8 +19,10 @@ export default function CreatePage() {
       customer: customer,
       period: period,
       description: description,
+      responsibilities: responsibilities,
       technologies: technologies,
       roles: roles,
+      location: location,
     };
 
     const response = await fetch(
@@ -57,6 +61,12 @@ export default function CreatePage() {
         />
         <input
           type="text"
+          value={responsibilities}
+          placeholder="Type responsibilities"
+          onChange={(e) => setResponsibilities(e.target.value)}
+        />
+        <input
+          type="text"
           value={technologies}
           placeholder="Type technologies"
           onChange={(e) => setTechnologies(e.target.value)}
@@ -67,7 +77,13 @@ export default function CreatePage() {
           placeholder="Type roles"
           onChange={(e) => setRoles(e.target.value)}
         />
-        <button>Save</button>
+        <input
+          type="text"
+          value={location}
+          placeholder="Type location"
+          onChange={(e) => setLocation(e.target.value)}
+        />
+        <button>Create</button>
       </form>
     </section>
   );

@@ -12,10 +12,13 @@ export default function Project({ project }) {
   return (
     <article onClick={handleClick}>
       <h4>{project.customer}</h4>
+      <p>{project.location}</p>
       <p>{project.period}</p>
+      <h4>Project:</h4>
       <p>{project.description}</p>
-      <p>{project.technologies}</p>
-      <p>{project.roles}</p>
+      <h4>Responsibilities:</h4> <p>{project.responsibilities}</p>
+      <h4>Technologies:</h4> <p>{project.technologies}</p>
+      <h4>Roles:</h4> <p>{project.roles}</p>
     </article>
   );
 }

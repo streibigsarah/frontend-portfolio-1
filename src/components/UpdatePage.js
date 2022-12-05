@@ -6,8 +6,10 @@ export default function UpdatePage() {
   const [customer, setCustomer] = useState("");
   const [period, setPeriod] = useState("");
   const [description, setDescription] = useState("");
+  const [responsibilities, setResponsibilities] = useState("");
   const [technologies, setTechnologies] = useState("");
   const [roles, setRoles] = useState("");
+  const [location, setLocation] = useState("");
   const navigate = useNavigate();
   const url = `https://portfolio-1d6ff-default-rtdb.europe-west1.firebasedatabase.app/projects${params.id}.json`;
 
@@ -18,8 +20,10 @@ export default function UpdatePage() {
       setCustomer(project.customer);
       setPeriod(project.period);
       setDescription(project.description);
+      setResponsibilities(project.responsibilities);
       setTechnologies(project.technologies);
       setRoles(project.roles);
+      setLocation(project.location);
       // set the state with fetched data
     }
     getProject();
@@ -32,8 +36,10 @@ export default function UpdatePage() {
       customer: customer,
       period: period,
       description: description,
+      responsibilities: responsibilities,
       technologies: technologies,
       roles: roles,
+      location: location,
     };
     const response = await fetch(url, {
       method: "PUT",
@@ -56,6 +62,12 @@ export default function UpdatePage() {
         />
         <input
           type="text"
+          value={location}
+          placeholder="Type location"
+          onChange={(e) => setLocation(e.target.value)}
+        />
+        <input
+          type="text"
           value={period}
           placeholder="Type period"
           onChange={(e) => setPeriod(e.target.value)}
@@ -65,6 +77,12 @@ export default function UpdatePage() {
           value={description}
           placeholder="Type description"
           onChange={(e) => setDescription(e.target.value)}
+        />
+        <input
+          type="text"
+          value={responsibilities}
+          placeholder="Type responsibilities"
+          onChange={(e) => setResponsibilities(e.target.value)}
         />
         <input
           type="text"
@@ -79,7 +97,7 @@ export default function UpdatePage() {
           onChange={(e) => setRoles(e.target.value)}
         />
         <button classmodel="btn-save" onClick={updateProject}>
-          Save
+          Update
         </button>
       </form>
     </section>

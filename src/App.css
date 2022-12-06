@@ -39,7 +39,7 @@ h1 {
   margin-left: 0.1em;
 }
 
-h2 {
+h2 h3 {
   font-size: 2em;
   font-weight: 500;
   letter-spacing: 0.1px;
@@ -64,6 +64,21 @@ div {
 
 img {
   width: 10em;
+}
+
+#simple {
+  display: flex;
+  justify-content: space-between;
+  margin: 2em;
+}
+
+.tile {
+  margin: 2em;
+}
+
+.country {
+  display: flex;
+  justify-content: end;
 }
 
 /*

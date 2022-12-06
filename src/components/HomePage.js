@@ -21,15 +21,15 @@ export default function HomePage() {
 
   return (
     <section className="page">
-      <div id="simple">
+      <div calssName="tile" id="simple">
         <h1>Torben Streibig Nielsen</h1>
         <img
           src="https://static.wixstatic.com/media/8233f0_6f10c4899e4e4a8590b6e3a42bb37cf4~mv2.jpg"
           alt="portrait torben"
         />
       </div>
-      <div>
-        <h2>Summery</h2>
+      <div className="tile">
+        <h2>Senior PL/SQL developer</h2>
         <p>
           Very experienced PL/SQL developer and designer with focus on
           implementation, analysis, ETL and performance optimization and tuning.
@@ -46,18 +46,8 @@ export default function HomePage() {
         </ul>
       </div>
 
-      <div>
-        <h3>Projects</h3>
-        <label for="domestic" className="checkmark-container">
-          Domestic
-          <input id="show-country" type="checkbox" checked></input>
-          <span class="checkmark"></span>
-        </label>
-        <label for="foreign" className="checkmark-container">
-          Foreign
-          <input id="show-country" type="checkbox" checked></input>
-          <span class="checkmark"></span>
-        </label>
+      <div className="tile">
+        <h3 id="title">Projects</h3>
 
         <section className="grid-container">
           {projects.map((projectObj) => (

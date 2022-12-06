@@ -39,52 +39,54 @@ export default function CreatePage() {
 
   return (
     <section className="page">
-      <h1>Create New project</h1>
-      <form onSubmit={createProject}>
-        <input
-          type="text"
-          value={customer}
-          placeholder="Type customer"
-          onChange={(e) => setCustomer(e.target.value)}
-        />
-        <input
-          type="text"
-          value={period}
-          placeholder="Type period"
-          onChange={(e) => setPeriod(e.target.value)}
-        />
-        <input
-          type="text"
-          value={description}
-          placeholder="Type description"
-          onChange={(e) => setDescription(e.target.value)}
-        />
-        <input
-          type="text"
-          value={responsibilities}
-          placeholder="Type responsibilities"
-          onChange={(e) => setResponsibilities(e.target.value)}
-        />
-        <input
-          type="text"
-          value={technologies}
-          placeholder="Type technologies"
-          onChange={(e) => setTechnologies(e.target.value)}
-        />
-        <input
-          type="text"
-          value={roles}
-          placeholder="Type roles"
-          onChange={(e) => setRoles(e.target.value)}
-        />
-        <input
-          type="text"
-          value={location}
-          placeholder="Type location"
-          onChange={(e) => setLocation(e.target.value)}
-        />
-        <button>Create</button>
-      </form>
+      <div className="tile">
+        <h1>Create New project</h1>
+        <form onSubmit={createProject}>
+          <input
+            type="text"
+            value={customer}
+            placeholder="Type customer"
+            onChange={(e) => setCustomer(e.target.value)}
+          />
+          <input
+            type="text"
+            value={period}
+            placeholder="Type period"
+            onChange={(e) => setPeriod(e.target.value)}
+          />
+          <input
+            type="text"
+            value={description}
+            placeholder="Type description"
+            onChange={(e) => setDescription(e.target.value)}
+          />
+          <input
+            type="text"
+            value={responsibilities}
+            placeholder="Type responsibilities"
+            onChange={(e) => setResponsibilities(e.target.value)}
+          />
+          <input
+            type="text"
+            value={technologies}
+            placeholder="Type technologies"
+            onChange={(e) => setTechnologies(e.target.value)}
+          />
+          <input
+            type="text"
+            value={roles}
+            placeholder="Type roles"
+            onChange={(e) => setRoles(e.target.value)}
+          />
+          <input
+            type="text"
+            value={location}
+            placeholder="Type location"
+            onChange={(e) => setLocation(e.target.value)}
+          />
+          <button>Create</button>
+        </form>
+      </div>
     </section>
   );
 }

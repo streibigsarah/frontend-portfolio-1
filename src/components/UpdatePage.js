@@ -52,54 +52,56 @@ export default function UpdatePage() {
 
   return (
     <section className="page">
-      <h1>Update project</h1>
-      <form>
-        <input
-          type="text"
-          value={customer}
-          placeholder="Type customer"
-          onChange={(e) => setCustomer(e.target.value)}
-        />
-        <input
-          type="text"
-          value={location}
-          placeholder="Type location"
-          onChange={(e) => setLocation(e.target.value)}
-        />
-        <input
-          type="text"
-          value={period}
-          placeholder="Type period"
-          onChange={(e) => setPeriod(e.target.value)}
-        />
-        <input
-          type="text"
-          value={description}
-          placeholder="Type description"
-          onChange={(e) => setDescription(e.target.value)}
-        />
-        <input
-          type="text"
-          value={responsibilities}
-          placeholder="Type responsibilities"
-          onChange={(e) => setResponsibilities(e.target.value)}
-        />
-        <input
-          type="text"
-          value={technologies}
-          placeholder="Type technologies"
-          onChange={(e) => setTechnologies(e.target.value)}
-        />
-        <input
-          type="text"
-          value={roles}
-          placeholder="Type roles"
-          onChange={(e) => setRoles(e.target.value)}
-        />
-        <button classmodel="btn-save" onClick={updateProject}>
-          Update
-        </button>
-      </form>
+      <div>
+        <h1>Update project</h1>
+        <form>
+          <input
+            type="text"
+            value={customer}
+            placeholder="Type customer"
+            onChange={(e) => setCustomer(e.target.value)}
+          />
+          <input
+            type="text"
+            value={location}
+            placeholder="Type location"
+            onChange={(e) => setLocation(e.target.value)}
+          />
+          <input
+            type="text"
+            value={period}
+            placeholder="Type period"
+            onChange={(e) => setPeriod(e.target.value)}
+          />
+          <input
+            type="text"
+            value={description}
+            placeholder="Type description"
+            onChange={(e) => setDescription(e.target.value)}
+          />
+          <input
+            type="text"
+            value={responsibilities}
+            placeholder="Type responsibilities"
+            onChange={(e) => setResponsibilities(e.target.value)}
+          />
+          <input
+            type="text"
+            value={technologies}
+            placeholder="Type technologies"
+            onChange={(e) => setTechnologies(e.target.value)}
+          />
+          <input
+            type="text"
+            value={roles}
+            placeholder="Type roles"
+            onChange={(e) => setRoles(e.target.value)}
+          />
+          <button classmodel="btn-save" onClick={updateProject}>
+            Update
+          </button>
+        </form>
+      </div>
     </section>
   );
 }

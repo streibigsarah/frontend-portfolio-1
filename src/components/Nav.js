@@ -6,6 +6,7 @@ export default function Nav() {
       <NavLink to="/">Home</NavLink>
       <NavLink to="/create">Create</NavLink>
       <NavLink to="/Update">Update</NavLink>
+      <NavLink to="/project">project</NavLink>
     </nav>
   );
 }

@@ -2,7 +2,6 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 export default function CreatePage() {
-  const navigate = useNavigate();
   const [customer, setCustomer] = useState("");
   const [period, setPeriod] = useState("");
   const [description, setDescription] = useState("");
@@ -10,6 +9,7 @@ export default function CreatePage() {
   const [technologies, setTechnologies] = useState("");
   const [roles, setRoles] = useState("");
   const [location, setLocation] = useState("");
+  const navigate = useNavigate();
 
   async function createProject(event) {
     event.preventDefault();
@@ -40,7 +40,7 @@ export default function CreatePage() {
   return (
     <section className="page">
       <div className="tile">
-        <h1>Create New project</h1>
+        <h1>Create new project</h1>
         <form onSubmit={createProject}>
           <input
             type="text"
@@ -84,7 +84,9 @@ export default function CreatePage() {
             placeholder="Type location"
             onChange={(e) => setLocation(e.target.value)}
           />
-          <button>Create</button>
+          <button className="btn-save" onClick={createProject}>
+            Save
+          </button>
         </form>
       </div>
     </section>

@@ -21,7 +21,7 @@ export default function HomePage() {
 
   return (
     <section className="page">
-      <div calssName="tile" id="simple">
+      <div className="tile" id="simple">
         <h1>Torben Streibig Nielsen</h1>
         <img
           src="https://static.wixstatic.com/media/8233f0_6f10c4899e4e4a8590b6e3a42bb37cf4~mv2.jpg"

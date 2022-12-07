@@ -4,7 +4,7 @@ import { useNavigate, useParams } from "react-router-dom";
 export default function ProjectPage() {
   const [project, setProject] = useState([]); // state to handle the data (project)
   const params = useParams();
-  const url = `https://portfolio-1d6ff-default-rtdb.europe-west1.firebasedatabase.app/projects${params.id}.json`;
+  const url = `https://portfolio-1d6ff-default-rtdb.europe-west1.firebasedatabase.app/projects/${params.id}.json`;
   const navigate = useNavigate();
 
   //the side effect - fetch project
@@ -27,20 +27,28 @@ export default function ProjectPage() {
 
   return (
     <section className="page">
-      <article className="project-detail">
-        <section>
-          <h1>{project.customer}</h1>
+      <div>
+        <h1>Project details</h1>
+        <article className="project-detail">
+          <h4>Customer:</h4>
+          <p>{project.customer}</p>
+          <h4>Location:</h4>
           <p>{project.location}</p>
-          <p>{project.period}</p>
-          <p>{project.description}</p>
-          <p>{project.responsibilities}</p>
-          <p>{project.technologies}</p>
-          <p>{project.roles}</p>
+          <h4>Period:</h4>
+          <p>Period{project.period}</p>
+          <h4>Description:</h4>
+          <p>Description{project.description}</p>
+          <h4>Responsibilities:</h4>
+          <p>responsibilities{project.responsibilities}</p>
+          <h4>Technologies:</h4>
+          <p>Technologies{project.technologies}</p>
+          <h4>Roles:</h4>
+          <p>Roles{project.roles}</p>
           <button className="btn-outline" onClick={deleteProject}>
             Delete project
           </button>
-        </section>
-      </article>
+        </article>
+      </div>
     </section>
   );
 }

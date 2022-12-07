@@ -63,7 +63,8 @@ div {
 }
 
 img {
-  width: 10em;
+  width: 7em;
+  height: 7em;
 }
 
 #simple {
@@ -79,6 +80,15 @@ img {
 .country {
   display: flex;
   justify-content: end;
+}
+
+.project-detail {
+  box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.25);
+  padding: 1.5em;
+  background-color: var(--white);
+  transition: 0.5s;
+  animation: fadeIn 0.5s;
+  cursor: pointer;
 }
 
 /*
@@ -173,6 +183,7 @@ nav a.active {
 }
 
 /* ---------- grid container styling ---------- */
+
 .grid-container {
   display: grid;
   grid-template-columns: 1fr;
@@ -222,7 +233,7 @@ nav a.active {
 }
 
 /* ---------- buttons in grid container ---------- */
-/*
+
 .grid-container .btns {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -269,9 +280,9 @@ button {
 }
 
 button.btn-outline {
-  background-color: var(--light-green);
-  color: var(--green);
-  border: solid 2px var(--green);
+  background-color: var(--brown);
+  color: var(--white);
+  border: solid 2px var(--brown);
 }
 
 .btn-sign-out {

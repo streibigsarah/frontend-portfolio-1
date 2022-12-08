@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Project from "../components/Project";
+import Checkbox from "./Checkbox";
 
 export default function HomePage() {
   const [projects, setProjects] = useState([]); // state to handle the data (projectss)

@@ -25,6 +25,10 @@ export default function ProjectPage() {
     }
   }
 
+  function updateProject() {
+    navigate(`/update/${params.id}`);
+  }
+
   return (
     <section className="page">
       <div>
@@ -46,6 +50,9 @@ export default function ProjectPage() {
           <p>Roles{project.roles}</p>
           <button className="btn-outline" onClick={deleteProject}>
             Delete project
+          </button>
+          <button className="btn-outline" onClick={updateProject}>
+            Update project
           </button>
         </article>
       </div>

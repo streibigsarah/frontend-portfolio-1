@@ -46,9 +46,19 @@ export default function HomePage() {
           <li>Shell Script</li>
         </ul>
       </div>
-
       <div className="tile">
         <h3 id="title">Projects</h3>
+
+        <label for="show-domestic" className="checkmark-container">
+          Show Domestic
+          <input id="show-domestic" type="checkbox" checked></input>
+          <span class="checkmark"></span>
+        </label>
+        <label for="show-foreign" className="checkmark-container">
+          Show Foreign
+          <input id="show-foreign" type="checkbox" checked></input>
+          <span class="checkmark"></span>
+        </label>
 
         <section className="grid-container">
           {projects.map((projectObj) => (

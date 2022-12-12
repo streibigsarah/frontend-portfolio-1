@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import { NavLink, useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
-export default function ProjectPage() {
+export default function ProjectPage({ isAuth }) {
   const [project, setProject] = useState([]); // state to handle the data (project)
   const params = useParams();
   const url = `https://portfolio-1d6ff-default-rtdb.europe-west1.firebasedatabase.app/projects/${params.id}.json`;
@@ -17,15 +17,23 @@ export default function ProjectPage() {
     getProject();
   }, [url]); // <--- "[]" VERY IMPORTANT!!!
 
+  function showDeleteDialog() {
+    const shouldDelete = window.confirm(
+      `Do you want to delete "${project.name}"?`
+    );
+    if (shouldDelete) {
+      deleteProject();
+    }
+  }
+
   async function deleteProject() {
     const response = await fetch(url, { method: "DELETE" });
-
     if (response.ok) {
       navigate("/"); // navigate back to home page
     }
   }
 
-  function updateProject() {
+  function showUpdate() {
     navigate(`/update/${params.id}`);
   }
 
@@ -39,21 +47,25 @@ export default function ProjectPage() {
           <h4>Location:</h4>
           <p>{project.location}</p>
           <h4>Period:</h4>
-          <p>Period{project.period}</p>
+          <p>{project.period}</p>
           <h4>Description:</h4>
           <p>Description{project.description}</p>
           <h4>Responsibilities:</h4>
-          <p>responsibilities{project.responsibilities}</p>
+          <p>{project.responsibilities}</p>
           <h4>Technologies:</h4>
-          <p>Technologies{project.technologies}</p>
+          <p>{project.technologies}</p>
           <h4>Roles:</h4>
-          <p>Roles{project.roles}</p>
-          <button className="btn-outline" onClick={deleteProject}>
-            Delete project
-          </button>
-          <button className="btn-outline" onClick={updateProject}>
-            Update project
-          </button>
+          <p>{project.roles}</p>
+          {isAuth && (
+            <>
+              <button id="btn-outline" onClick={showUpdate}>
+                Update project
+              </button>
+              <button id="btn-outline" onClick={showDeleteDialog}>
+                Delete project
+              </button>
+            </>
+          )}
         </article>
       </div>
     </section>

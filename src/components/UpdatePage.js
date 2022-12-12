@@ -13,6 +13,7 @@ export default function UpdatePage() {
   const navigate = useNavigate();
   const url = `https://portfolio-1d6ff-default-rtdb.europe-west1.firebasedatabase.app/projects/${params.id}.json`;
   console.log(url);
+
   useEffect(() => {
     async function getProject() {
       const response = await fetch(url); // read one project from firebase

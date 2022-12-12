@@ -1,24 +1,39 @@
 import { useEffect, useState } from "react";
 import Project from "../components/Project";
-import Checkbox from "./Checkbox";
 
+//() function automaticly set
 export default function HomePage() {
-  const [projects, setProjects] = useState([]); // state to handle the data (projectss)
-  // users: name of the state
+  const [projects, setProjects] = useState([]); // state to handle the data (projects)
+  // project: name of the state
   // setProjects: name of the function to set the state
+  const [showDenmark, setShowDenmark] = useState(true);
+  const [showForeignCountry, setShowForeignCountry] = useState(true);
 
-  //the side effect - fetch projects
+  //the side effect - fetch projects -  By using this Hook, you tell React that your component needs to do something after render(gengivelse).
   useEffect(() => {
-    async function getData() {
-      const response = await fetch(
-        "https://portfolio-1d6ff-default-rtdb.europe-west1.firebasedatabase.app/projects.json"
-      ); // read all projects from firebase
-      const data = await response.json();
-      const array = Object.keys(data).map((key) => ({ id: key, ...data[key] })); // from object to array
-      setProjects(array); // set the state with fetched data
-    }
     getData();
   }, []); // <--- "[]" VERY IMPORTANT!!!
+
+  async function getData() {
+    const response = await fetch(
+      "https://portfolio-1d6ff-default-rtdb.europe-west1.firebasedatabase.app/projects.json"
+    ); // read all projects from firebase
+    const data = await response.json();
+    const array = Object.keys(data).map((key) => ({ id: key, ...data[key] })); // from object to array
+    setProjects(array); // set the state with fetched data
+  }
+  //checkbox filter
+  let projectsToDisplay = [...projects];
+  if (showDenmark === false) {
+    projectsToDisplay = projectsToDisplay.filter(
+      (project) => project.location.includes("Denmark") === false
+    );
+  }
+  if (showForeignCountry === false) {
+    projectsToDisplay = projectsToDisplay.filter((project) =>
+      project.location.includes("Denmark")
+    );
+  }
 
   return (
     <section className="page">
@@ -47,21 +62,28 @@ export default function HomePage() {
         </ul>
       </div>
       <div className="tile">
-        <h3 id="title">Projects</h3>
-
-        <label for="show-domestic" className="checkmark-container">
-          Show Domestic
-          <input id="show-domestic" type="checkbox" checked></input>
-          <span class="checkmark"></span>
-        </label>
-        <label for="show-foreign" className="checkmark-container">
-          Show Foreign
-          <input id="show-foreign" type="checkbox" checked></input>
-          <span class="checkmark"></span>
-        </label>
+        <h3>Projects</h3>
+        <section className="checkbox">
+          <label id="checkbox">
+            <input
+              type="checkbox"
+              checked={showDenmark}
+              onChange={() => setShowDenmark(!showDenmark)}
+            />
+            Denmark
+          </label>
+          <label id="checkbox">
+            <input
+              type="checkbox"
+              checked={showForeignCountry}
+              onChange={() => setShowForeignCountry(!showForeignCountry)}
+            />
+            Foreign Country
+          </label>
+        </section>
 
         <section className="grid-container">
-          {projects.map((projectObj) => (
+          {projectsToDisplay.map((projectObj) => (
             <Project project={projectObj} key={projectObj.id} />
           ))}
         </section>

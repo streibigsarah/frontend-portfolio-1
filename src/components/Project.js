@@ -2,9 +2,10 @@ import { useNavigate } from "react-router-dom";
 
 export default function Project({ project }) {
   const navigate = useNavigate();
-  // person is a prop containing person data, ex:
-  // {id: "...", image: "...", mail: "...", name: "...", phone: "...", title: "..."}
+  // project is a prop containing project data, ex:
+  // {id: "...", customer, period etc "..."}
 
+  //user action -click on a project prom the array on HomePage invokes function to navigate to the onclicked project(component) and display all proerties from the oncliked project id in projectPage.js
   function handleClick() {
     navigate(`projects/${project.id}`);
   }

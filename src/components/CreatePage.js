@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+//a variable for each property value of the project is difined
 export default function CreatePage() {
-  const [customer, setCustomer] = useState("");
+  const [customer, setCustomer] = useState(""); //holding the customer data and setting the new customer data
   const [period, setPeriod] = useState("");
   const [description, setDescription] = useState("");
   const [responsibilities, setResponsibilities] = useState("");
@@ -12,10 +13,11 @@ export default function CreatePage() {
   const navigate = useNavigate();
 
   async function createProject(event) {
+    //a function with callback- event: An HTML button was clicked
     event.preventDefault();
 
     const newProject = {
-      // key/name: value from state
+      // key/name: value from state-the customer data is going in the customer value
       customer: customer,
       period: period,
       description: description,
@@ -26,6 +28,7 @@ export default function CreatePage() {
     };
 
     const response = await fetch(
+      //whaiting for the new peoject to be posted to database
       "https://portfolio-1d6ff-default-rtdb.europe-west1.firebasedatabase.app/projects.json",
       {
         method: "POST",
@@ -33,7 +36,7 @@ export default function CreatePage() {
       }
     );
     if (response.ok) {
-      navigate("/");
+      navigate("/"); //When the new project is posted the user is returned to the homepage
     }
   }
 
@@ -92,3 +95,5 @@ export default function CreatePage() {
     </section>
   );
 }
+
+//user action, onclick will save new project

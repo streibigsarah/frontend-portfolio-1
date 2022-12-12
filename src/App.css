@@ -21,7 +21,18 @@ body {
   margin: 0;
   background-color: var(--beige);
 }
+/*------page styling---------*/
 
+div {
+  padding: 1.5em;
+  box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.25);
+}
+
+.tile {
+  margin: 2em;
+}
+
+/*---------------text styling----------*/
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
@@ -56,10 +67,7 @@ a {
   color: var(--dark-gray);
 }
 
-div {
-  padding: 1.5em;
-  box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.25);
-}
+/*-----------------------homepage styling-------------*/
 
 img {
   width: 7em;
@@ -72,66 +80,40 @@ img {
   margin: 2em;
 }
 
-.tile {
-  margin: 2em;
-}
-
-.country {
-  display: flex;
-  justify-content: end;
-}
-
 .project-detail {
   box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.25);
   padding: 1.5em;
-  background-color: var(--ligh);
   transition: 0.5s;
   animation: fadeIn 0.5s;
-
   cursor: pointer;
 }
 
-/* Customize the label (the container) */
-.checkmark-container {
-  display: block;
-  position: relative;
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  padding: 1.5em;
-  line-height: 1.5em;
-  margin-left: -25px;
+.checkbox {
+  display: flex;
+  padding-left: 1.3em;
+  justify-content: flex-start;
+  padding-bottom: 1em;
 }
 
-/* Hide the browser's default checkbox */
-.checkmark-container input {
+#checkbox {
+  padding-right: 1em;
+}
+
+.project-detail {
+  background-color: white;
+}
+
+.btn-sign-out {
   position: absolute;
-  opacity: 0;
+  right: 0;
+  top: 0;
   cursor: pointer;
-  height: 0;
-  width: 0;
-  border: solid;
-}
-
-/* Create a custom checkbox */
-.checkmark {
-  position: absolute;
-  margin: 0 0 0 1em;
-  height: 25px;
-  width: 25px;
-  background-color: var(--brown);
-}
-
-/* On mouse-over, add a grey background color */
-
-/*
-img {
-  max-width: 100%;
+  font-size: 0.7em;
+  padding: 2.032em 1em;
 }
 
 /* ---------- main (page) styling ---------- */
+
 main {
   animation: fadeIn 0.4s;
   /* padding equals height of tabbar and topbar */
@@ -139,21 +121,7 @@ main {
   min-height: calc(100vh - 167px);
 }
 
-/* ---------- header styling ---------- */
-header {
-  background-color: var(--beige);
-  color: var(--beige);
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 9999;
-  text-align: center;
-}
-
-.text-center {
-  text-align: center;
-}
+/*--------------sign in page-------------*/
 .text-error {
   color: var(--text-color-danger);
 }
@@ -194,7 +162,7 @@ nav {
   text-align: center;
 }
 
-/* Style the links inside the navigation bar */
+/*------------- Style the links inside the navigation bar ---------------*/
 nav a {
   display: inline-block;
   color: var(--beige);
@@ -205,13 +173,14 @@ nav a {
   text-transform: uppercase;
 }
 
-/* Change the color of links on hover */
+/* ---------Change the color of links on hover ---------- */
 nav a:hover {
   background-color: var(--beige);
   color: var(--text-color-dark);
 }
 
-/* Add a color to the active/current link */
+/* ------------Add a color to the active/current link ---------*/
+
 nav a.active {
   background-color: var(--beige);
   color: var(--brown);
@@ -237,12 +206,6 @@ nav a.active {
   }
 }
 
-/*@media (min-width: 1200px) {
-  .grid-container {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-  }
-}
-*/
 .grid-container > article {
   box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.25);
   padding: 1.5em;
@@ -254,14 +217,8 @@ nav a.active {
 
 .grid-container > article:hover {
   box-shadow: 0 8px 16px 0 var(--brown);
+  background-color: var(--light-gray);
 }
-/*
-.grid-container img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-}
-*/
 
 .grid-container p {
   margin: 0.3em 0;
@@ -303,7 +260,7 @@ button {
   font-weight: 300;
   text-align: center;
   cursor: pointer;
-  border: solid 2px var(--green);
+  border: solid 2px var(--brown);
   color: var(--white);
   background-color: var(--brown);
   letter-spacing: 0.05em;
@@ -318,15 +275,6 @@ button.btn-outline {
   background-color: var(--brown);
   color: var(--white);
   border: solid 2px var(--brown);
-}
-
-.btn-sign-out {
-  position: absolute;
-  right: 0;
-  top: 0;
-  cursor: pointer;
-  font-size: 0.7em;
-  padding: 2.032em 1em;
 }
 
 input {
@@ -368,9 +316,9 @@ form .file-input {
 }
 
 .spinner {
-  border: 5px solid var(--light-green);
+  border: 5px solid var(--brown);
   border-radius: 50%;
-  border-top: 5px solid var(--green);
+  border-top: 5px solid var(--brown);
   width: 50px;
   height: 50px;
   -webkit-animation: spin 1s linear infinite;
@@ -415,99 +363,9 @@ article .avatar img {
   border-radius: 50%;
 }
 
-/* ---------- tools grid styling ---------- */
-
-.tools-grid {
-  background-color: var(--light-green);
-  display: grid;
-  grid-template-columns: 1fr;
-  padding: 0 1em;
-  gap: 1em;
-  justify-items: center;
-}
-
-@media (min-width: 600px) {
-  .tools-grid {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-}
-
-.tools-grid label {
-  max-width: 350px;
-}
-
-/* ---------- checkmark styling ---------- */
-
-/* Customize the label (the container) */
-.checkmark-container {
-  display: block;
-  position: relative;
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  padding: 1.5em;
-  line-height: 1.5em;
-  margin-left: -25px;
-}
-
-/* Hide the browser's default checkbox */
-.checkmark-container input {
-  position: absolute;
-  opacity: 0;
-  cursor: pointer;
-  height: 0;
-  width: 0;
-}
-
-/* Create a custom checkbox */
-.checkmark {
-  position: absolute;
-  margin: 0 0 0 1em;
-  height: 25px;
-  width: 25px;
-  background-color: #eee;
-}
-
-/* On mouse-over, add a grey background color */
-.checkmark-container:hover input ~ .checkmark {
-  background-color: var(--text-color-light);
-}
-
-/* When the checkbox is checked, add a blue background */
-.checkmark-container input:checked ~ .checkmark {
-  background-color: var(--green);
-}
-
-/* Create the checkmark/indicator (hidden when not checked) */
-.checkmark:after {
-  content: "";
-  position: absolute;
-  display: none;
-}
-
-/* Show the checkmark when checked */
-.checkmark-container input:checked ~ .checkmark:after {
-  display: block;
-}
-
-/* Style the checkmark/indicator */
-.checkmark-container .checkmark:after {
-  left: 9px;
-  top: 5px;
-  width: 5px;
-  height: 10px;
-  border: solid var(--white);
-  border-width: 0 3px 3px 0;
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  transform: rotate(45deg);
-}
-
 /* ---------- custom select styling ---------- */
 select {
-  background-color: var(--green);
+  background-color: var(--light-gray);
   border: none;
   color: var(--text-color-light);
   padding: 1em;

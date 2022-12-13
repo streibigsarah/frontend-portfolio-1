@@ -3,8 +3,8 @@ import { useNavigate, useParams } from "react-router-dom";
 
 export default function ProjectPage({ isAuth }) {
   const [project, setProject] = useState([]); // state to handle the data (project)
-  const params = useParams();
-  const url = `https://portfolio-1d6ff-default-rtdb.europe-west1.firebasedatabase.app/projects/${params.id}.json`;
+  const params = useParams(); //handle data with a specific parameter: project id
+  const url = `https://portfolio-1d6ff-default-rtdb.europe-west1.firebasedatabase.app/projects/${params.id}.json`; //???Back-Tics Syntax ``defines a string $løse en ligning-beregne noget udfra id parameteret
   const navigate = useNavigate();
 
   //the side effect - fetch project
@@ -33,6 +33,7 @@ export default function ProjectPage({ isAuth }) {
     }
   }
 
+  //showing update form or page??
   function showUpdate() {
     navigate(`/update/${params.id}`);
   }

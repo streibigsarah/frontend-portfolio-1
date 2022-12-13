@@ -6,13 +6,14 @@ export default function SignInPage({ setIsAuth }) {
   const navigate = useNavigate();
 
   function signIn(event) {
+    //an Onsubmit is starting an event
     event.preventDefault();
     const mail = event.target.mail.value; // mail value from inout field in sign in form
     const password = event.target.password.value; // password value from inout field in sign in form
 
     if (mail === "admin@mail.dk" && password === "torben") {
       setIsAuth(true);
-      localStorage.setItem("isAuth", true); // set localStorage
+      localStorage.setItem("isAuth", true); // set localStorage - no need for ekstern storrage when Torben is the only login user of the app
       navigate("/");
     } else {
       setErrorMessage("Wrong mail or password.");

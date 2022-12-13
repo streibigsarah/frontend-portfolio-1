@@ -26,7 +26,10 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/create" element={<CreatePage />} />
         <Route path="/update/:id" element={<UpdatePage />} />
-        <Route path="projects/:id" element={<ProjectPage />} />
+        <Route
+          path="projects/:id"
+          element={<ProjectPage isAuth={setIsAuth} />}
+        />
         <Route path="/sign-in" element={<SignInPage setIsAuth={setIsAuth} />} />
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>

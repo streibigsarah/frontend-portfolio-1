@@ -1,9 +1,10 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-//a variable for each property value of the project is difined
+//customer: name of the state
+//setCustemer: name of the function to set the state
 export default function CreatePage() {
-  const [customer, setCustomer] = useState(""); //holding the customer data and setting the new customer data
+  const [customer, setCustomer] = useState("");
   const [period, setPeriod] = useState("");
   const [description, setDescription] = useState("");
   const [responsibilities, setResponsibilities] = useState("");
@@ -13,11 +14,12 @@ export default function CreatePage() {
   const navigate = useNavigate();
 
   async function createProject(event) {
-    //a function with callback- event: An HTML button was clicked
+    //event: a HTML button was clicked
+    //async:function with callback
     event.preventDefault();
 
     const newProject = {
-      // key/name: value from state-the customer data is going in the customer value
+      // property value from state equals property value of new state
       customer: customer,
       period: period,
       description: description,
@@ -28,18 +30,18 @@ export default function CreatePage() {
     };
 
     const response = await fetch(
-      //whaiting for the new peoject to be posted to database
+      //whaiting for the new object (project) to be posted
       "https://portfolio-1d6ff-default-rtdb.europe-west1.firebasedatabase.app/projects.json",
       {
         method: "POST",
-        body: JSON.stringify(newProject),
+        body: JSON.stringify(newProject), //converts a JavaScript value to a JSON string
       }
     );
     if (response.ok) {
-      navigate("/"); //When the new project is posted the user is returned to the homepage
+      navigate("/"); //When the new project is posted you return to HomePage
     }
   }
-
+  //form to fill with new project details - onClick submit new project to database
   return (
     <section className="page">
       <div className="tile">
@@ -95,5 +97,3 @@ export default function CreatePage() {
     </section>
   );
 }
-
-//user action, onclick will save new project

@@ -1,15 +1,15 @@
 import { useEffect, useState } from "react";
 import Project from "../components/Project";
 
-//() function automaticly set
 export default function HomePage() {
-  const [projects, setProjects] = useState([]); // state to handle the data (projects)
+  const [projects, setProjects] = useState([]);
   // project: name of the state
   // setProjects: name of the function to set the state
   const [showDenmark, setShowDenmark] = useState(true);
   const [showForeignCountry, setShowForeignCountry] = useState(true);
+  //variables for checkbox filter
 
-  //the side effect - fetch projects -  By using this Hook, you tell React that your component needs to do something after render(gengivelse).
+  // useEffect tells React that the component needs to do something (filter) after rendering data
   useEffect(() => {
     getData();
   }, []); // <--- "[]" VERY IMPORTANT!!!
@@ -17,12 +17,12 @@ export default function HomePage() {
   async function getData() {
     const response = await fetch(
       "https://portfolio-1d6ff-default-rtdb.europe-west1.firebasedatabase.app/projects.json"
-    ); // read all projects from firebase
+    );
     const data = await response.json();
     const array = Object.keys(data).map((key) => ({ id: key, ...data[key] })); // from object to array
     setProjects(array); // set the state with fetched data
   }
-  //checkbox filter
+  //checkbox filter variables for respectively projects in Denmark and outside Denmark
   let projectsToDisplay = [...projects];
   if (showDenmark === false) {
     projectsToDisplay = projectsToDisplay.filter(
@@ -63,7 +63,7 @@ export default function HomePage() {
       </div>
       <div className="tile">
         <h3>Projects</h3>
-        <section className="checkbox">
+        <section className="checkboxsection">
           <label id="checkbox">
             <input
               type="checkbox"

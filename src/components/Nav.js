@@ -1,6 +1,6 @@
 import { Link, NavLink } from "react-router-dom";
 
-//navigationbar changes when loggedin
+//navigationbar and funkfions changes when loggedin
 export default function Nav({ isAuth, setIsAuth }) {
   function handleSignOut() {
     setIsAuth(false);

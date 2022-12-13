@@ -70,14 +70,13 @@ a {
 /*-----------------------homepage styling-------------*/
 
 img {
-  width: 7em;
-  height: 7em;
+  margin: 1.5em;
+  max-width: 7em;
 }
 
 #simple {
   display: flex;
   justify-content: space-between;
-  margin: 2em;
 }
 
 .project-detail {
@@ -86,9 +85,10 @@ img {
   transition: 0.5s;
   animation: fadeIn 0.5s;
   cursor: pointer;
+  background-color: white;
 }
 
-.checkbox {
+.checkboxsection {
   display: flex;
   padding-left: 1.3em;
   justify-content: flex-start;
@@ -97,10 +97,6 @@ img {
 
 #checkbox {
   padding-right: 1em;
-}
-
-.project-detail {
-  background-color: white;
 }
 
 .btn-sign-out {
@@ -217,23 +213,11 @@ nav a.active {
 
 .grid-container > article:hover {
   box-shadow: 0 8px 16px 0 var(--brown);
-  background-color: var(--light-gray);
+  background-color: #f2f2f2;
 }
 
 .grid-container p {
   margin: 0.3em 0;
-}
-
-/* ---------- buttons in grid container ---------- */
-
-.grid-container .btns {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1em;
-}
-
-.grid-container .btns button {
-  width: 100%;
 }
 
 /* ---------- form styling ---------- */
@@ -257,6 +241,7 @@ form button {
 }
 
 button {
+  display: block;
   font-weight: 300;
   text-align: center;
   cursor: pointer;
@@ -267,14 +252,8 @@ button {
   text-transform: uppercase;
   padding: 0.5em 1em;
   font-size: 0.8em;
-  display: block;
-  margin: 1em 0 0;
-}
 
-button.btn-outline {
-  background-color: var(--brown);
-  color: var(--white);
-  border: solid 2px var(--brown);
+  margin: 1em 0 0;
 }
 
 input {
@@ -340,29 +319,6 @@ form .file-input {
   transition: visibility 0s 0.4s, opacity 0.4s linear;
 }
 
-.avatar {
-  display: flex;
-  align-items: center;
-  margin: 0 0 1.2em;
-  text-align: left;
-}
-
-.avatar span {
-  margin: 0 0 0 1em;
-}
-
-.avatar h3,
-.avatar p {
-  margin: 0;
-}
-
-article .avatar img {
-  max-width: 50px;
-  height: 50px;
-  object-fit: cover;
-  border-radius: 50%;
-}
-
 /* ---------- custom select styling ---------- */
 select {
   background-color: var(--light-gray);
@@ -371,16 +327,4 @@ select {
   padding: 1em;
   margin: 1em;
   max-width: 350px;
-}
-
-/* ---------- user detail styling ---------- */
-.user-detail {
-  padding: 0 1.5em;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1.5em;
-}
-
-.user-detail h1 {
-  margin: 1em 0;
 }

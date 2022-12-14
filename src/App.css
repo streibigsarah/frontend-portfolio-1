@@ -70,12 +70,13 @@ a {
 /*-----------------------homepage styling-------------*/
 
 img {
-  margin: 1.5em;
-  max-width: 7em;
+  margin-left: 1.5em;
+  max-width: 30%;
+  height: fit-content;
 }
 
 #simple {
-  display: flex;
+  display: inline-flex;
   justify-content: space-between;
 }
 

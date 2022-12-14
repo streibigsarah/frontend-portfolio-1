@@ -5,7 +5,7 @@ export default function Project({ project }) {
   // project is a prop containing project data, ex:
   // {id: "...", customer, period etc "..."}
 
-  //user action -click on a project prom the array on HomePage invokes function to navigate to the onclicked project(component) and display all proerties from the oncliked project id in projectPage.js
+  //user action -click on any project in grid and navigate to the onclicked project ProjectPage
   function handleClick() {
     navigate(`projects/${project.id}`);
   }

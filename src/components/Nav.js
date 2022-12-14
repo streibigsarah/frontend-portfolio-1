@@ -1,10 +1,10 @@
 import { Link, NavLink } from "react-router-dom";
 
-//navigationbar and funkfions changes when loggedin
+//navigation bar changes with authentication
 export default function Nav({ isAuth, setIsAuth }) {
   function handleSignOut() {
     setIsAuth(false);
-    localStorage.removeItem("isAuth"); // reset localStorage
+    localStorage.removeItem("isAuth");
   }
 
   return (

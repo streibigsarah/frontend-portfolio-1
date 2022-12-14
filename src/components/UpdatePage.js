@@ -15,8 +15,9 @@ export default function UpdatePage() {
   console.log(url);
 
   useEffect(() => {
+    //set state with updated values
     async function getProject() {
-      const response = await fetch(url); // read one project from firebase
+      const response = await fetch(url);
       const project = await response.json();
       setCustomer(project.customer);
       setPeriod(project.period);
@@ -25,12 +26,12 @@ export default function UpdatePage() {
       setTechnologies(project.technologies);
       setRoles(project.roles);
       setLocation(project.location);
-      // set the state with fetched data
     }
     getProject();
   }, [url]); // <--- "[]" VERY IMPORTANT!!!
 
   async function updateProject(event) {
+    //onClick Update-button - wait for fetch, then navigate to HomePage
     event.preventDefault();
     const newProject = {
       // key/model: value from state
